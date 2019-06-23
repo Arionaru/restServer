@@ -42,7 +42,7 @@ public class UserRestController {
     }
 
     @PutMapping(produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity<User> updateUser(@RequestBody @Valid User user, UriComponentsBuilder builder) {
+    public ResponseEntity<User> updateUser(@RequestBody @Valid User user) {
         if (user == null) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
@@ -50,7 +50,7 @@ public class UserRestController {
         return new ResponseEntity<>(user,HttpStatus.OK);
     }
 
-    @DeleteMapping(produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @DeleteMapping(value = "{id}",produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<User> deleteUser(@PathVariable Long id){
         if (!userService.getUserById(id).isPresent()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
