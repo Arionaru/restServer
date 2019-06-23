@@ -3,7 +3,6 @@ package ru.ariona.userManagement.server;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.util.Date;
 
 @Entity
 public class User {
@@ -15,11 +14,10 @@ public class User {
 
     private String lastName;
 
-    private Date birthDate;
 
     private String aboutMe;
 
-    private String adress;
+    private String address;
 
     public User() {
     }
@@ -53,15 +51,6 @@ public class User {
         this.lastName = lastName;
     }
 
-    public Date getBirthDate() {
-        return birthDate;
-    }
-
-    public void setBirthDate(Date birthDate) {
-        this.birthDate = birthDate;
-    }
-
-
     public String getAboutMe() {
         return aboutMe;
     }
@@ -70,11 +59,21 @@ public class User {
         this.aboutMe = aboutMe;
     }
 
-    public String getAdress() {
-        return adress;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", aboutMe='" + aboutMe + '\'' +
+                ", address='" + address + '\'' +
+                '}';
     }
 }

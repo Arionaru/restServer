@@ -1,7 +1,6 @@
 package ru.ariona.userManagement.server;
 
-import org.springframework.data.repository.CrudRepository;
-import ru.ariona.userManagement.server.User;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepo extends CrudRepository<User, Long> {
+public interface UserRepo extends JpaRepository<User, Long> {
 }
